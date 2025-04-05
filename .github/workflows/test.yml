@@ -54,8 +54,10 @@ jobs:
         uses: schneegans/dynamic-badges-action@v1.6.0
         with:
           auth: ${{ secrets.GIST_TOKEN }}
-          gistID: ${{ secrets.GIST_ID }}
-          filename: coverage.json
+          gistID: 65de00768869c54d4410059dedd416e5
+          filename: gistfile1.txt
           label: coverage
           message: ${{ steps.coverage.outputs.percentage }}%
-          color: ${{ steps.coverage.outputs.percentage >= 90 && 'brightgreen' || steps.coverage.outputs.percentage >= 80 && 'green' || steps.coverage.outputs.percentage >= 70 && 'yellow' || 'red' }} 
+          color: ${{ steps.coverage.outputs.percentage >= 90 && 'brightgreen' || steps.coverage.outputs.percentage >= 80 && 'green' || steps.coverage.outputs.percentage >= 70 && 'yellow' || 'red' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
