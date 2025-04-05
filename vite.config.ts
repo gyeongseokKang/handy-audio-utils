@@ -29,8 +29,16 @@ export default defineConfig({
     include: ["src/**/*.test.ts"],
     coverage: {
       provider: "v8",
-      reporter: ["text", "json", "json-summary", "html"],
-      exclude: ["node_modules/", "**/*.d.ts"],
+      include: ["src/**/*.{js,ts,jsx,tsx}"],
+      exclude: [
+        "src/**/*.d.ts",
+        "src/**/*.test.{js,ts,jsx,tsx}",
+        "src/**/*.spec.{js,ts,jsx,tsx}",
+        "src/**/index.{js,ts,jsx,tsx}",
+        "src/**/*.stories.{js,ts,jsx,tsx}",
+        "src/utils/test-utils/mock",
+      ],
+      reporter: ["text", "json-summary"],
       reportsDirectory: "./coverage",
     },
   },
