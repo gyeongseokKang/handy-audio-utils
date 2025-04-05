@@ -1,0 +1,42 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run tests with coverage
+        run: npm test -- --coverage
+      
+      - name: Extract coverage percentage
+        id: coverage
+        run: |
+          COVERAGE=$(node -e "const fs=require('fs'); const data=JSON.parse(fs.readFileSync('./coverage/coverage-summary.json')); console.log(Math.round(data.total.lines.pct || data.total.statements.pct))")
+          echo "percentage=$COVERAGE" >> $GITHUB_OUTPUT
+      
+      - name: Update coverage badge
+        uses: schneegans/dynamic-badges-action@v1.6.0
+        with:
+          auth: ${{ secrets.GIST_TOKEN }}
+          gistID: ${{ secrets.GIST_ID }}
+          filename: coverage.json
+          label: coverage
+          message: ${{ steps.coverage.outputs.percentage }}%
+          color: ${{ steps.coverage.outputs.percentage >= 90 && 'brightgreen' || steps.coverage.outputs.percentage >= 80 && 'green' || steps.coverage.outputs.percentage >= 70 && 'yellow' || 'red' }} 
