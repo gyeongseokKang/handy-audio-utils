@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/handy-audio-utils.svg)](https://www.npmjs.com/package/handy-audio-utils)
 [![downloads](https://img.shields.io/npm/dm/handy-audio-utils.svg)](https://www.npmjs.com/package/handy-audio-utils)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/handy-audio-utils)](https://bundlephobia.com/package/handy-audio-utils)
-[![Test Coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/gyeongseokKang/65de00768869c54d4410059dedd416e5/raw/coverage.json)](https://github.com/gyeongseokKang/handy-audio-utils/actions)
+[![Test Coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/gyeongseokKang/dbb8025d3d6b67d74782a2b5db994ce9/raw/coverage.json)](https://github.com/gyeongseokKang/handy-audio-utils/actions)
 
 ## Installation
 
