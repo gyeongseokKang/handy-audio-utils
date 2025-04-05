@@ -51,7 +51,7 @@ jobs:
           echo "percentage=$COVERAGE" >> $GITHUB_OUTPUT
       
       - name: Update coverage badge
-        uses: schneegans/dynamic-badges-action@v1.6.0
+        uses: schneegans/dynamic-badges-action@v2.0.0
         with:
           auth: ${{ secrets.GIST_TOKEN }}
           gistID: 65de00768869c54d4410059dedd416e5
@@ -59,5 +59,6 @@ jobs:
           label: coverage
           message: ${{ steps.coverage.outputs.percentage }}%
           color: ${{ steps.coverage.outputs.percentage >= 90 && 'brightgreen' || steps.coverage.outputs.percentage >= 80 && 'green' || steps.coverage.outputs.percentage >= 70 && 'yellow' || 'red' }}
+          forceUpdate: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
