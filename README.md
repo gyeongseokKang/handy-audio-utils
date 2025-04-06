@@ -31,7 +31,7 @@ pnpm install handy-audio-utils
 
 ## Split
 
-- [`splitAudioByDuration`](./docs/splitAudioByDuration.md) &mdash; splits an AudioBuffer into segments of a specified duration.
+- [`splitAudioBufferByDuration`](./docs/splitAudioBufferByDuration.md) &mdash; splits an AudioBuffer into segments of a specified duration.
 
 ## Key Features
 

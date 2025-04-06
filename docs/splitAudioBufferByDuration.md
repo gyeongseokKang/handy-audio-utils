@@ -1,17 +1,17 @@
-# `splitAudioByDuration`
+# `splitAudioBufferByDuration`
 
 A utility function that splits an AudioBuffer into segments of a specified duration.
 
 ## Usage
 
 ```javascript
-import { splitAudioByDuration } from 'handy-audio-utils';
+import { splitAudioBufferByDuration } from 'handy-audio-utils';
 
 // Create or obtain an AudioBuffer
 const audioBuffer = /* your AudioBuffer */;
 
 // Split the audio into 5-second segments
-const segments = await splitAudioByDuration(audioBuffer, 5);
+const segments = await splitAudioBufferByDuration(audioBuffer, 5);
 
 // Process the segments
 segments.forEach((segment, index) => {
@@ -23,7 +23,7 @@ segments.forEach((segment, index) => {
 ## API
 
 ```typescript
-async function splitAudioByDuration(
+async function splitAudioBufferByDuration(
   audioBuffer: AudioBuffer,
   splitTime: number
 ): Promise<AudioBuffer[]>
@@ -64,7 +64,7 @@ The function will throw an error in the following cases:
 
 ```javascript
 const audioBuffer = /* a 30-second AudioBuffer */;
-const segments = await splitAudioByDuration(audioBuffer, 10);
+const segments = await splitAudioBufferByDuration(audioBuffer, 10);
 // Results in 3 segments of 10 seconds each
 ```
 
@@ -72,7 +72,7 @@ const segments = await splitAudioByDuration(audioBuffer, 10);
 
 ```javascript
 const audioBuffer = /* a 32-second AudioBuffer */;
-const segments = await splitAudioByDuration(audioBuffer, 10);
+const segments = await splitAudioBufferByDuration(audioBuffer, 10);
 // Results in 4 segments: 3 segments of 10 seconds each and 1 segment of 2 seconds
 ```
 
@@ -81,15 +81,15 @@ const segments = await splitAudioByDuration(audioBuffer, 10);
 ```javascript
 // High-quality audio (48kHz, stereo)
 const highQualityBuffer = /* 48kHz stereo AudioBuffer */;
-const highQualitySegments = await splitAudioByDuration(highQualityBuffer, 5);
+const highQualitySegments = await splitAudioBufferByDuration(highQualityBuffer, 5);
 
 // Mono audio
 const monoBuffer = /* mono AudioBuffer */;
-const monoSegments = await splitAudioByDuration(monoBuffer, 2);
+const monoSegments = await splitAudioBufferByDuration(monoBuffer, 2);
 
 // Multi-channel audio (e.g., 5.1 surround)
 const surroundBuffer = /* 5.1 channel AudioBuffer */;
-const surroundSegments = await splitAudioByDuration(surroundBuffer, 3);
+const surroundSegments = await splitAudioBufferByDuration(surroundBuffer, 3);
 ```
 
 ```

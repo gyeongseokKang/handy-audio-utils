@@ -7,7 +7,7 @@
 
 const MIN_SPLIT_TIME = 0.1; // seconds
 
-export async function splitAudioByDuration(
+export async function splitAudioBufferByDuration(
   audioBuffer: AudioBuffer,
   splitTime: number
 ): Promise<AudioBuffer[]> {
