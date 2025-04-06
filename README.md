@@ -23,9 +23,13 @@
 
 ```bash
 npm i handy-audio-utils
+```
 
+```bash
 yarn add handy-audio-utils
+```
 
+```bash
 pnpm install handy-audio-utils
 ```
 
@@ -33,7 +37,6 @@ pnpm install handy-audio-utils
 
 - [`splitAudioBufferByDuration`](./docs/splitAudioBufferByDuration.md) &mdash; splits an AudioBuffer into segments of a specified duration.
 - [`splitAudioBufferAtTimePoints`](./docs/splitAudioBufferAtTimePoints.md) &mdash; splits an AudioBuffer at specific time points.
-
 
 ## Key Features
 
