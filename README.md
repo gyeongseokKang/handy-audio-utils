@@ -38,6 +38,10 @@ pnpm install handy-audio-utils
 - [`splitAudioBufferByDuration`](./docs/splitAudioBufferByDuration.md) &mdash; splits an AudioBuffer into segments of a specified duration.
 - [`splitAudioBufferAtTimePoints`](./docs/splitAudioBufferAtTimePoints.md) &mdash; splits an AudioBuffer at specific time points.
 
+## Adjust
+
+- [`adjustAudioBufferVolume`](./docs/adjustAudioBufferVolume.md) &mdash; adjusts the volume of an AudioBuffer by a specified ratio.
+
 ## Key Features
 
 - Support for all audio channel formats (mono, stereo, multi-channel)
