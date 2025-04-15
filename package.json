@@ -1,7 +1,7 @@
 {
   "name": "handy-audio-utils",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "main": "./dist/handy-audio-utils.umd.cjs",
   "module": "./dist/handy-audio-utils.js",
